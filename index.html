@@ -1,14 +1,17 @@
 <!doctype HTML>
 <html>
-<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+<script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+<script src="https://raw.githubusercontent.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
   <body>
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
     	<a-assets>
-	    	<video id="vid"  position="10 0 0" autoplay="false" loop="false" src="https://cdn.glitch.com/1ed4c8bc-f61c-4c66-80e3-d13845ed25ae%2Fvideo-test2.mp4?v=1576499274145"></video>
+	    	<video id="video" autoplay loop crossOrigin="anonymous" webkit-playsinline style="display:none">
+				<source src="video/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
+				<source src="video/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+			</video>
 		</a-assets>
       	<a-marker preset="hiro">
-	    	<a-video src="#vid" position="" rotation="270 0 0" play="true"></a-video>
+	    	<a-video src="#video" position="" rotation="270 0 0" play="true"></a-video>
       	</a-marker>
       	<a-entity camera></a-entity>
     </a-scene>
