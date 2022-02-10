@@ -1,0 +1,19 @@
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+<script src="scripts/aframe-ar.min.js"></script>
+  <body>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+    	<a-assets>
+	    	<video id="video" autoplay loop crossOrigin="anonymous" webkit-playsinline style="display:none">
+				<source src="video/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
+				<source src="video/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+			</video>
+		</a-assets>
+      	<a-marker preset="hiro">
+	    	<a-video src="#video" position="" rotation="270 0 0" play="true"></a-video>
+      	</a-marker>
+      	<a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
